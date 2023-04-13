@@ -3,11 +3,37 @@ ISim P.20131013 (signature 0x8ef4fb42)
 Number of CPUs detected in this system: 6
 Turning on mult-threading, number of parallel sub-compilation jobs: 12 
 Determining compilation order of HDL files
-Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/../src/tb/model_uart.v" into library work
-Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/../src/tb/tb.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/seq_mult.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/seq_add.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/uart_fifo.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/uart.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/seq_rf.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/seq_alu.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/uart_top.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/seq.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/nexys3.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/model_uart.v" into library work
+Analyzing Verilog file "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/tb.v" into library work
 Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
 Starting static elaboration
-ERROR:HDLCompiler:1654 - "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/../src/tb/tb.v" Line 56: Instantiating <uut_> from unknown module <nexys3>
-ERROR:HDLCompiler:71 - "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/../src/tb/tb.v" Line 119: inst_vld is not declared under prefix uut_
-ERROR:HDLCompiler:71 - "C:/Users/Student/Desktop/nf2/152a/lab1/lab1/../src/tb/tb.v" Line 120: inst_wd is not declared under prefix uut_
-ERROR:Simulator:778 - Static elaboration of top level Verilog design unit(s) in library work failed
+Completed static elaboration
+Fuse Memory Usage: 160228 KB
+Fuse CPU Usage: 202 ms
+Compiling module model_uart(baud=1000000,name="UA...
+Compiling module seq_rf_default
+Compiling module seq_add_default
+Compiling module seq_mult_default
+Compiling module seq_alu_default
+Compiling module seq_default
+Compiling module uart_fifo
+Compiling module uart
+Compiling module uart_top_default
+Compiling module nexys3_default
+Compiling module tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 12 Verilog Units
+Built simulation executable C:/Users/Student/Desktop/nf2/152a/lab1/lab1/tb_isim_beh.exe
+Fuse Memory Usage: 165704 KB
+Fuse CPU Usage: 280 ms

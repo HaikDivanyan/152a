@@ -1,0 +1,29 @@
+Command line:
+   tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  56882
+
+Thu Apr 13 13:41:12 2023
+
+
+ Elaboration Time: 0.078125 sec
+
+ Current Memory Usage: 824.275 Meg
+
+ Total Signals          : 122
+ Total Nets             : 229
+ Total Signal Drivers   : 55
+ Total Blocks           : 20
+ Total Primitive Blocks : 13
+ Total Processes        : 77
+ Total Traceable Variables  : 195
+ Total Scalar Nets and Variables : 11725
+Total Line Count : 308
+
+ Total Simulation Time: 7.14063 sec
+
+ Current Memory Usage: 667.775 Meg
+
+Thu Apr 13 13:42:27 2023
+

@@ -5,17 +5,5 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="error" file="HDLCompiler" num="1654" delta="unknown" >"C:/Users/Student/Desktop/nf2/152a/lab1/lab1/../src/tb/tb.v" Line 56: Instantiating &lt;<arg fmt="%s" index="1">uut_</arg>&gt; from unknown module &lt;<arg fmt="%s" index="2">nexys3</arg>&gt;
-</msg>
-
-<msg type="error" file="HDLCompiler" num="71" delta="unknown" >"C:/Users/Student/Desktop/nf2/152a/lab1/lab1/../src/tb/tb.v" Line 119: <arg fmt="%s" index="1">inst_vld</arg> is not declared under prefix <arg fmt="%s" index="2">uut_</arg>
-</msg>
-
-<msg type="error" file="HDLCompiler" num="71" delta="unknown" >"C:/Users/Student/Desktop/nf2/152a/lab1/lab1/../src/tb/tb.v" Line 120: <arg fmt="%s" index="1">inst_wd</arg> is not declared under prefix <arg fmt="%s" index="2">uut_</arg>
-</msg>
-
-<msg type="error" file="Simulator" num="778" delta="unknown" >Static elaboration of top level Verilog design unit(s) in library <arg fmt="%s" index="1">work</arg> failed
-</msg>
-
 </messages>
 

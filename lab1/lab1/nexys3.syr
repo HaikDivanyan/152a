@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: nexys3.prj
 
@@ -105,78 +105,78 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq_mult.v" into library work
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq_mult.v" into library work
 Parsing module <seq_mult>.
-Parsing verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\/seq_definitions.v" included at line 8.
-Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq_add.v" into library work
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq_add.v" into library work
 Parsing module <seq_add>.
-Parsing verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\/seq_definitions.v" included at line 8.
-Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_fifo.v" into library work
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_fifo.v" into library work
 Parsing module <uart_fifo>.
-Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" into library work
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" into library work
 Parsing module <uart>.
-Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq_rf.v" into library work
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq_rf.v" into library work
 Parsing module <seq_rf>.
-Parsing verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\/seq_definitions.v" included at line 8.
-Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq_alu.v" into library work
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq_alu.v" into library work
 Parsing module <seq_alu>.
-Parsing verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\/seq_definitions.v" included at line 7.
-Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_top.v" into library work
+Parsing verilog file "seq_definitions.v" included at line 7.
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_top.v" into library work
 Parsing module <uart_top>.
-Parsing verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\/seq_definitions.v" included at line 8.
-Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq.v" into library work
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq.v" into library work
 Parsing module <seq>.
-Parsing verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\/seq_definitions.v" included at line 8.
-Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\nexys3.v" into library work
+Parsing verilog file "seq_definitions.v" included at line 8.
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\nexys3.v" into library work
 Parsing module <nexys3>.
-Parsing verilog file "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\/seq_definitions.v" included at line 8.
+Parsing verilog file "seq_definitions.v" included at line 8.
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
 
 Elaborating module <nexys3>.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\nexys3.v" Line 106: Result of 9-bit expression is truncated to fit in 8-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\nexys3.v" Line 106: Result of 9-bit expression is truncated to fit in 8-bit target.
 
 Elaborating module <seq>.
 
 Elaborating module <seq_rf>.
 
 Elaborating module <seq_alu>.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq_alu.v" Line 32: Result of 20-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq_alu.v" Line 32: Result of 20-bit expression is truncated to fit in 16-bit target.
 
 Elaborating module <seq_add>.
 
 Elaborating module <seq_mult>.
 
 Elaborating module <uart_top>.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_top.v" Line 60: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_top.v" Line 61: Result of 20-bit expression is truncated to fit in 16-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_top.v" Line 60: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_top.v" Line 61: Result of 20-bit expression is truncated to fit in 16-bit target.
 
 Elaborating module <uart_fifo>.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_fifo.v" Line 55: Result of 11-bit expression is truncated to fit in 10-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_fifo.v" Line 61: Result of 32-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_fifo.v" Line 55: Result of 11-bit expression is truncated to fit in 10-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_fifo.v" Line 61: Result of 32-bit expression is truncated to fit in 10-bit target.
 
 Elaborating module <uart>.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 90: Result of 32-bit expression is truncated to fit in 11-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 93: Result of 32-bit expression is truncated to fit in 6-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 95: Result of 32-bit expression is truncated to fit in 11-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 98: Result of 32-bit expression is truncated to fit in 6-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 138: Result of 32-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 139: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 147: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 153: Result of 32-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 192: Result of 32-bit expression is truncated to fit in 4-bit target.
-WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v" Line 209: Result of 32-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:1127 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\nexys3.v" Line 133: Assignment to uart_rx_data ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\nexys3.v" Line 134: Assignment to uart_rx_valid ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 90: Result of 32-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 93: Result of 32-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 95: Result of 32-bit expression is truncated to fit in 11-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 98: Result of 32-bit expression is truncated to fit in 6-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 138: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 139: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 147: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 153: Result of 32-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 192: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v" Line 209: Result of 32-bit expression is truncated to fit in 2-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\nexys3.v" Line 133: Assignment to uart_rx_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\nexys3.v" Line 134: Assignment to uart_rx_valid ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <nexys3>.
-    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\nexys3.v".
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\nexys3.v".
         seq_in_width = 8
         seq_op_width = 2
         seq_rn_width = 2
@@ -190,8 +190,8 @@ Synthesizing Unit <nexys3>.
         seq_rf_width = 16
         alu_width = 16
         uart_num_nib = 4
-INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\nexys3.v" line 130: Output port <o_rx_data> of the instance <uart_top_> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\nexys3.v" line 130: Output port <o_rx_valid> of the instance <uart_top_> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\nexys3.v" line 130: Output port <o_rx_data> of the instance <uart_top_> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\nexys3.v" line 130: Output port <o_rx_valid> of the instance <uart_top_> is unconnected or connected to loadless signal.
     Found 2-bit register for signal <arst_ff>.
     Found 17-bit register for signal <clk_dv>.
     Found 1-bit register for signal <clk_en>.
@@ -208,7 +208,7 @@ INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\nexys3.v" line 1
 Unit <nexys3> synthesized.
 
 Synthesizing Unit <seq>.
-    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq.v".
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq.v".
         seq_in_width = 8
         seq_op_width = 2
         seq_rn_width = 2
@@ -227,7 +227,7 @@ Synthesizing Unit <seq>.
 Unit <seq> synthesized.
 
 Synthesizing Unit <seq_rf>.
-    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq_rf.v".
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq_rf.v".
         seq_in_width = 8
         seq_op_width = 2
         seq_rn_width = 2
@@ -250,7 +250,7 @@ Synthesizing Unit <seq_rf>.
 Unit <seq_rf> synthesized.
 
 Synthesizing Unit <seq_alu>.
-    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq_alu.v".
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq_alu.v".
         seq_in_width = 8
         seq_op_width = 2
         seq_rn_width = 2
@@ -271,7 +271,7 @@ Synthesizing Unit <seq_alu>.
 Unit <seq_alu> synthesized.
 
 Synthesizing Unit <seq_add>.
-    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq_add.v".
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq_add.v".
         seq_in_width = 8
         seq_op_width = 2
         seq_rn_width = 2
@@ -293,7 +293,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
 Unit <seq_add> synthesized.
 
 Synthesizing Unit <seq_mult>.
-    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\seq_mult.v".
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\seq_mult.v".
         seq_in_width = 8
         seq_op_width = 2
         seq_rn_width = 2
@@ -315,7 +315,7 @@ WARNING:Xst:647 - Input <rst> is never used. This port will be preserved and lef
 Unit <seq_mult> synthesized.
 
 Synthesizing Unit <uart_top>.
-    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_top.v".
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_top.v".
         seq_in_width = 8
         seq_op_width = 2
         seq_rn_width = 2
@@ -333,9 +333,9 @@ Synthesizing Unit <uart_top>.
         stNib1 = 1
         stNL = 5
         stCR = 6
-INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_top.v" line 100: Output port <fifo_cnt> of the instance <tfifo_> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_top.v" line 120: Output port <is_receiving> of the instance <uart_> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_top.v" line 120: Output port <recv_error> of the instance <uart_> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_top.v" line 100: Output port <fifo_cnt> of the instance <tfifo_> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_top.v" line 120: Output port <is_receiving> of the instance <uart_> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_top.v" line 120: Output port <recv_error> of the instance <uart_> is unconnected or connected to loadless signal.
     Found 16-bit register for signal <tx_data>.
     Found 1-bit register for signal <tfifo_rd_z>.
     Found 3-bit register for signal <state>.
@@ -349,7 +349,7 @@ INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_top.v" line
 Unit <uart_top> synthesized.
 
 Synthesizing Unit <uart_fifo>.
-    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart_fifo.v".
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart_fifo.v".
         size = 1024
         sizew = 10
     Set property "ram_style = block" for signal <mem>.
@@ -371,7 +371,7 @@ Synthesizing Unit <uart_fifo>.
 Unit <uart_fifo> synthesized.
 
 Synthesizing Unit <uart>.
-    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\src\rtl\uart.v".
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\lab1\lab1\uart.v".
         CLOCK_DIVIDE = 25
         RX_IDLE = 0
         RX_CHECK_START = 1
@@ -822,11 +822,11 @@ clk            |    6.909|         |         |         |
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.10 secs
+Total CPU time to Xst completion: 4.33 secs
  
 --> 
 
-Total memory usage is 229596 kilobytes
+Total memory usage is 228648 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   60 (   0 filtered)
