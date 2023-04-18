@@ -404,7 +404,6 @@
     <!-- Do not hand-edit this section, as it will be overwritten when the    -->
     <!-- project is analyzed based on files automatically identified as       -->
     <!-- include files.                                                       -->
-    <file xil_pn:name="../src/rtl/seq_definitions.v" xil_pn:type=""/>
     <file xil_pn:name="seq_definitions.v" xil_pn:type="FILE_VERILOG"/>
   </autoManagedFiles>
 

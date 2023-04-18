@@ -6,6 +6,9 @@ module tb;
    reg       clk;
    reg       btnS;
    reg       btnR;
+   reg [7:0]inread[1023:0];
+   integer cnt;
+   
    
    integer   i;
    
@@ -27,15 +30,21 @@ module tb;
         #1000 btnR = 0;
         #1500000;
         
-        tskRunPUSH(0,4);
-        tskRunPUSH(0,0);
-        tskRunPUSH(1,3);
-        tskRunMULT(0,1,2);
-        tskRunADD(2,0,3);
-        tskRunSEND(0);
-        tskRunSEND(1);
-        tskRunSEND(2);
-        tskRunSEND(3);
+        $readmemb("seq.code", inread);
+        for(cnt = 0; cnt < inread[0]; cnt = cnt + 1) begin
+          tskRunInst(inread[cnt+1]);
+        end
+        
+        
+        //tskRunPUSH(0,4);
+        //tskRunPUSH(0,0);
+        //tskRunPUSH(1,3);
+        //tskRunMULT(0,1,2);
+        //tskRunADD(2,0,3);
+        //tskRunSEND(0);
+        //tskRunSEND(1);
+        //tskRunSEND(2);
+        //tskRunSEND(3);
         
         #1000;        
         $finish;
