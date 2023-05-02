@@ -60,6 +60,7 @@
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_XST" xil_pn:name="nexys3.xst"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="nexys3_envsettings.html"/>
     <file xil_pn:fileType="FILE_NCD" xil_pn:name="nexys3_guide.ncd" xil_pn:origination="imported"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="nexys3_isim_beh.exe"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="nexys3_map.map" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_MAP_REPORT" xil_pn:name="nexys3_map.mrp" xil_pn:subbranch="Map"/>
     <file xil_pn:branch="Implementation" xil_pn:fileType="FILE_NCD" xil_pn:name="nexys3_map.ncd" xil_pn:subbranch="Map"/>
@@ -73,9 +74,10 @@
     <file xil_pn:fileType="FILE_FITTER_REPORT" xil_pn:name="nexys3_summary.xml"/>
     <file xil_pn:fileType="FILE_WEBTALK" xil_pn:name="nexys3_usage.xml"/>
     <file xil_pn:fileType="FILE_XRPT" xil_pn:name="nexys3_xst.xrpt"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="seq_rf_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="seq_rf_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="seq_rf_isim_beh.wdb"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_isim_beh.exe"/>
-    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_HTML" xil_pn:name="usage_statistics_webtalk.html"/>
     <file xil_pn:fileType="FILE_LOG" xil_pn:name="webtalk.log"/>
@@ -86,39 +88,11 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1681848650" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1681848650">
+    <transform xil_pn:end_ts="1682029476" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1682029476">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1681849335" xil_pn:in_ck="-153119420719885033" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1681849335">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="model_uart.v"/>
-      <outfile xil_pn:name="nexys3.v"/>
-      <outfile xil_pn:name="seq.v"/>
-      <outfile xil_pn:name="seq_add.v"/>
-      <outfile xil_pn:name="seq_alu.v"/>
-      <outfile xil_pn:name="seq_definitions.v"/>
-      <outfile xil_pn:name="seq_mult.v"/>
-      <outfile xil_pn:name="seq_rf.v"/>
-      <outfile xil_pn:name="tb.v"/>
-      <outfile xil_pn:name="uart.v"/>
-      <outfile xil_pn:name="uart_fifo.v"/>
-      <outfile xil_pn:name="uart_top.v"/>
-    </transform>
-    <transform xil_pn:end_ts="1681848650" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-7128511773193751507" xil_pn:start_ts="1681848650">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1681848650" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-2964187670512171541" xil_pn:start_ts="1681848650">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1681848650" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-719123778725436882" xil_pn:start_ts="1681848650">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1681849335" xil_pn:in_ck="-153119420719885033" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1681849335">
+    <transform xil_pn:end_ts="1682029476" xil_pn:in_ck="-153119420719885033" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1682029476">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="model_uart.v"/>
@@ -134,7 +108,35 @@
       <outfile xil_pn:name="uart_fifo.v"/>
       <outfile xil_pn:name="uart_top.v"/>
     </transform>
-    <transform xil_pn:end_ts="1681849337" xil_pn:in_ck="-153119420719885033" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6159587342810039271" xil_pn:start_ts="1681849335">
+    <transform xil_pn:end_ts="1682029476" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="8763732881543241239" xil_pn:start_ts="1682029476">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1682029476" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-8779600229636439083" xil_pn:start_ts="1682029476">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1682029476" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-719123778725436882" xil_pn:start_ts="1682029476">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1682029476" xil_pn:in_ck="-153119420719885033" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1682029476">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="model_uart.v"/>
+      <outfile xil_pn:name="nexys3.v"/>
+      <outfile xil_pn:name="seq.v"/>
+      <outfile xil_pn:name="seq_add.v"/>
+      <outfile xil_pn:name="seq_alu.v"/>
+      <outfile xil_pn:name="seq_definitions.v"/>
+      <outfile xil_pn:name="seq_mult.v"/>
+      <outfile xil_pn:name="seq_rf.v"/>
+      <outfile xil_pn:name="tb.v"/>
+      <outfile xil_pn:name="uart.v"/>
+      <outfile xil_pn:name="uart_fifo.v"/>
+      <outfile xil_pn:name="uart_top.v"/>
+    </transform>
+    <transform xil_pn:end_ts="1682029478" xil_pn:in_ck="-153119420719885033" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-524749255019091" xil_pn:start_ts="1682029476">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -142,18 +144,18 @@
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="tb_beh.prj"/>
-      <outfile xil_pn:name="tb_isim_beh.exe"/>
+      <outfile xil_pn:name="seq_rf_beh.prj"/>
+      <outfile xil_pn:name="seq_rf_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1682020909" xil_pn:in_ck="8240271692192319424" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="1853537267270789276" xil_pn:start_ts="1682020909">
+    <transform xil_pn:end_ts="1682029478" xil_pn:in_ck="3599615518779621192" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="7764174886245426160" xil_pn:start_ts="1682029478">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="tb_isim_beh.wdb"/>
+      <outfile xil_pn:name="seq_rf_isim_beh.wdb"/>
     </transform>
     <transform xil_pn:end_ts="1681243220" xil_pn:name="TRAN_copyInitialToXSTAbstractSynthesis" xil_pn:start_ts="1681243220">
       <status xil_pn:value="SuccessfullyRun"/>

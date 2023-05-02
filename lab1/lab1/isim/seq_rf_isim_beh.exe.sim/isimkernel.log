@@ -1,0 +1,10 @@
+Command line:
+   seq_rf_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  62997
+
+Thu Apr 20 15:24:39 2023
+
+
+ Elaboration Time: 0.03125 sec
