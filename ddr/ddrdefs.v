@@ -1,7 +1,11 @@
 parameter pauseWidth = 1;
 parameter nextSongWidth = 1;
-parameter scoreWidth = 17;
-parameter statusWidth = 10;
-parameter arrowLocsWidth = 2816;
-parameter statusWidth = 1;
-parameter totalWidth = 2848;//2846;
+parameter scoreWidth = 2;
+parameter arrowStatusWidth = 4;
+parameter numBytesPerArrow = 2;
+parameter numArrowsPerType = 50;
+parameter arrowLocsWidth = numArrowsPerType*numBytesPerArrow*4;
+parameter totalBytes = pauseWidth + nextSongWidth + scoreWidth + arrowStatusWidth + arrowLocsWidth; //509
+parameter totalWidth = 2;
+parameter totalWidthBits = totalWidth*8;
+parameter uart_num_nib = totalWidthBits/4;

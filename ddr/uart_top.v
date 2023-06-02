@@ -14,7 +14,7 @@ module uart_top (/*AUTOARG*/
    output [7:0]             o_rx_data;
    output                   o_rx_valid;
    
-   input [totalWidth-1:0] i_tx_data;
+   input [totalWidthBits-1:0] i_tx_data;
    input                    i_tx_stb;
    
    input                    clk;
@@ -36,7 +36,7 @@ module uart_top (/*AUTOARG*/
    wire                 tx_active;
    wire                 tfifo_rd;
    reg                  tfifo_rd_z;
-   reg [totalWidth-1:0]  tx_data;
+   reg [totalWidthBits-1:0]  tx_data;
    reg [2:0]               state;
 
    assign o_tx_busy = (state!=stIdle);
@@ -90,7 +90,7 @@ module uart_top (/*AUTOARG*/
      case (state)
        stNL:    tfifo_in = "\n";
        stCR:    tfifo_in = "\r";
-       default: tfifo_in = fnNib2ASCII(tx_data[totalWidth-1:totalWidth-4]);
+       default: tfifo_in = tx_data[totalWidthBits-1:totalWidthBits-4];//fnNib2ASCII(tx_data[totalWidthBits-1:totalWidthBits-4]);
      endcase // case (state)
    
    assign tfifo_rd = ~tfifo_empty & ~tx_active & ~tfifo_rd_z;
