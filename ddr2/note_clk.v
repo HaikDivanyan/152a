@@ -1,13 +1,13 @@
 `timescale 1ns / 1ps
 
 // generate a 1 ms (1 KHz) clock
-module timer_1ms(
+module note_clk(
     input wire clk,
     output reg out_clk
 );
     localparam HZ = 1;
 
-    reg [15:0] cnt;
+    reg [35:0] cnt;
 
     initial begin
         cnt [35:0] <= 0;

@@ -2,95 +2,143 @@
 
 // show pixel(x, y) on the screen
 module graphic(
-    input wire  clk, reset,
-    input wire  [1:0]  miao,
+    input wire  clk,
+    input wire  reset,
     input wire  [10:0] x, y,
-    input wire  [1:0]  btn1, btn2,
-    output wire [7:0]  rgb
+    input wire  BtnL,
+    input wire  BtnR,
+    input wire  BtnU,
+    input wire  BtnD,
+    output wire [7:0]  rgb,
+    output wire [10:0] score_out
 );
 
     // colors: [B1 B2 G1 G2 G3 R1 R2 R3]
     localparam COLOR_BG   = 8'b01001000;
-    localparam COLOR_BALL = 8'b11011101;
     localparam COLOR_LINE = 8'b11100001;
-    localparam COLOR_LBAR = 8'b10010111;
-    localparam COLOR_RBAR = 8'b00101011;
+    localparam COLOR_LARROW = 8'b11011101;
+    localparam COLOR_RARROW = 8'b10010111;
+    localparam COLOR_UARROW = 8'b00101011;
+    localparam COLOR_DARROW = 8'b1011011;
     localparam COLOR_NULL = 8'b00000000;
+    
 
-    // sizes
-    reg [10:0] BAR_H   = 11'd60;
-    reg [10:0] BAR_W   = 11'd5;
-    localparam BALL_R  = 11'd5;
-    localparam L_BOUND = 11'd60;
-    localparam R_BOUND = 11'd580;
     localparam U_BOUND = 11'd40;
     localparam D_BOUND = 11'd440;
+    localparam H_ARR_W = 11'd40;
+    localparam H_ARR_H = 11'd10;
+    localparam V_ARR_W = 11'd10;
+    localparam V_ARR_H = 11'd40;
+    localparam U_ARR_X = 11'd128;
+    localparam D_ARR_X = 11'd256;
+    localparam L_ARR_X = 11'd384;
+    localparam R_ARR_X = 11'd512;
+    localparam SCORE_LINE_WIDTH = 11'd2;
+    localparam SCORE_LINE_Y = 11'd400;
 
-    // velocities
-    localparam BAR_V  = 10'd1;
-    localparam BALL_V = 10'd1;
+    localparam ARR_V = 10'd1;
+    localparam SCORE_TOLERANCE = 11'd8;
 
-    // initialize values
-    reg [10:0] ball_x, ball_y, lbar_y, rbar_y;
-    reg ball_move_x, ball_move_y;
-    reg [5:0] lscore, rscore;
-    initial begin
-        ball_x = 11'd320;
-        ball_y = 11'd240;
-        lbar_y = 11'd240;
-        rbar_y = 11'd240;
-        ball_move_x = 1'b1;
-        ball_move_y = 1'b1;
-        lscore = 1'b0;
-        rscore = 1'b0;
-    end
+    localparam MAX_ARROWS = 10;
+    reg [10:0] score;
+    reg [10:0] UArrows [MAX_ARROWS - 1:0];
+    reg [10:0] LArrows [MAX_ARROWS - 1:0];
+    reg [10:0] DArrows [MAX_ARROWS - 1:0];
+    reg [10:0] RArrows [MAX_ARROWS - 1:0];
+    reg [11:0] Uloc, Dloc, Lloc, Rloc;
+    integer i;
+    integer frame_count;
+//    integer rand;
+
+    wire [4:0] rand;
+    lfsr randgen(.clk(clk), .rst_n(reset), .data(rand));
 
     reg [7:0] rgb_now;
     wire clk_frame = (x == 0 && y == 0);
     always @(posedge clk) begin
+        if (~reset) begin
+            for (i = 0; i < MAX_ARROWS; i = i+1) begin
+                UArrows[i] = 0;
+                LArrows[i] = 0;
+                DArrows[i] = 0;
+                RArrows[i] = 0;
+            end
+            Uloc = 0;
+            Dloc = 0;
+            Lloc = 0;
+            Rloc = 0;
+            score = 0;
+            frame_count = 0;
+        end
+        
+        
 
         if (clk_frame) begin
-            // controls
-            if (btn1[0] && lbar_y > U_BOUND + BAR_H / 2) lbar_y = lbar_y - BAR_V;
-            if (btn1[1] && lbar_y < D_BOUND - BAR_H / 2) lbar_y = lbar_y + BAR_V;
-            if (btn2[0] && rbar_y > U_BOUND + BAR_H / 2) rbar_y = rbar_y - BAR_V;
-            if (btn2[1] && rbar_y < D_BOUND - BAR_H / 2) rbar_y = rbar_y + BAR_V;
-
-            if (miao[0]) BAR_H  = 11'd150;
-            else BAR_H  = 11'd60;
-            if (miao[1]) BAR_W  = 11'd20;
-            else BAR_W  = 11'd5;
-            if (reset) begin
-                lscore = 0;
-                rscore = 0;
+            frame_count = frame_count + 1;
+            //generate new arrow every at certain frequency randomly choose which arrow type
+            if(frame_count >= 200) begin
+                frame_count = 0;
+                case (rand[1:0]) 
+                    0: begin
+                        UArrows[Uloc] = U_BOUND;
+                        Uloc = Uloc + 1;
+                        if (Uloc >= MAX_ARROWS)
+                          Uloc = 0;
+                    end
+                    1: begin
+                        DArrows[Dloc] = U_BOUND;
+                        Dloc = Dloc + 1;
+                        if (Dloc >= MAX_ARROWS)
+                          Dloc = 0;
+                    end
+                    2: begin
+                        RArrows[Rloc] = U_BOUND;
+                        Rloc = Rloc + 1;
+                        if (Rloc >= MAX_ARROWS)
+                          Rloc = 0;
+                    end
+                    3: begin
+                        LArrows[Lloc] = U_BOUND;
+                        Lloc = Lloc + 1;
+                        if (Lloc >= MAX_ARROWS)
+                          Lloc = 0;
+                    end
+                endcase
             end
 
-            // ball move
-            if (ball_move_x) ball_x = ball_x + BALL_V;
-            else ball_x = ball_x - BALL_V;
-            if (ball_move_y) ball_y = ball_y + BALL_V;
-            else ball_y = ball_y - BALL_V;
-
-            // coliision detect
-            if (ball_y <= U_BOUND + BALL_R || ball_y >= D_BOUND - BALL_R)
-                ball_move_y = ~ball_move_y;
-            if (ball_x == L_BOUND + BAR_W + BALL_R &&
-                ball_y + BALL_R >= lbar_y - BAR_H / 2 && ball_y - BALL_R <= lbar_y + BAR_H / 2)
-                ball_move_x = ~ball_move_x;
-            if (ball_x == R_BOUND - BAR_W - BALL_R &&
-                ball_y + BALL_R >= rbar_y - BAR_H / 2 && ball_y - BALL_R <= rbar_y + BAR_H / 2)
-                ball_move_x = ~ball_move_x;
-
-            // bound detect
-            if (ball_x < 3 || ball_x > 637) begin
-                if (ball_x < 3)
-                    rscore = rscore + 1'b1;
-                else if (ball_x > 637)
-                    lscore = lscore + 1'b1;
-                ball_x = 320;
-                ball_y = 240;
-                ball_move_x = (rscore > lscore);
-                ball_move_y = 1'b1;
+            //check for correct presses
+            //move arrows down
+            for (i = 0; i < MAX_ARROWS; i = i+1) begin
+                if (UArrows[i] != 0) begin
+                    UArrows[i] = UArrows[i] + ARR_V;
+                end
+                if (DArrows[i] != 0) begin
+                    DArrows[i] = DArrows[i] + ARR_V;
+                end
+                if (RArrows[i] != 0) begin
+                    RArrows[i] = RArrows[i] + ARR_V;
+                end
+                if (LArrows[i] != 0) begin
+                    LArrows[i] = LArrows[i] + ARR_V;
+                end
+                
+                
+                if (BtnU && (UArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && UArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE)) begin
+                    UArrows[i] = 0;
+                    score = score + 1;
+                end
+                if (BtnD && (DArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && DArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE)) begin
+                    DArrows[i] = 0;
+                    score = score + 1;
+                end
+                if (BtnL && (LArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && LArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE)) begin
+                    LArrows[i] = 0;
+                    score = score + 1;
+                end
+                if (BtnR && (RArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && RArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE)) begin
+                    RArrows[i] = 0;
+                    score = score + 1;
+                end
             end
         end
 
@@ -98,30 +146,29 @@ module graphic(
 
             rgb_now <= COLOR_BG;
 
-            // border
-            if ((y == 40 || y == 440) && (x >= L_BOUND && x <= R_BOUND))
+            //arrows
+            for (i = 0; i < MAX_ARROWS; i = i+1) begin
+                if ((UArrows[i] != 0) && (x >= U_ARR_X - V_ARR_W/2 && x <= U_ARR_X + V_ARR_W/2) && (y >= UArrows[i] - V_ARR_H/2 && y <= UArrows[i] + V_ARR_H/2)) begin
+                    rgb_now <= COLOR_UARROW;
+                end
+                if ((DArrows[i] != 0) && (x >= D_ARR_X - V_ARR_W/2 && x <= D_ARR_X + V_ARR_W/2) && (y >= DArrows[i] - V_ARR_H/2 && y <= DArrows[i] + V_ARR_H/2)) begin
+                    rgb_now <= COLOR_DARROW;
+                end
+                if ((LArrows[i] != 0) && (x >= L_ARR_X - H_ARR_W/2 && x <= L_ARR_X + H_ARR_W/2) && (y >= LArrows[i] - H_ARR_H/2 && y <= LArrows[i] + H_ARR_H/2)) begin
+                    rgb_now <= COLOR_LARROW;
+                end
+                if ((RArrows[i] != 0) && (x >= R_ARR_X - H_ARR_W/2 && x <= R_ARR_X + H_ARR_W/2) && (y >= RArrows[i] - H_ARR_H/2 && y <= RArrows[i] + H_ARR_H/2)) begin
+                    rgb_now <= COLOR_RARROW;
+                end
+            end
+
+            //score line
+            if (y >= SCORE_LINE_Y - SCORE_LINE_WIDTH/2 && y <= SCORE_LINE_Y + SCORE_LINE_WIDTH/2) begin
+              if(reset)
                 rgb_now <= COLOR_LINE;
-
-            // bars
-            if ((x >= L_BOUND && x <= L_BOUND + BAR_W) &&
-                (y >= lbar_y - BAR_H / 2 && y <= lbar_y + BAR_H / 2))
-                rgb_now <= COLOR_LBAR;
-            if ((x >= R_BOUND - BAR_W && x <= R_BOUND) &&
-                (y >= rbar_y - BAR_H / 2 && y <= rbar_y + BAR_H / 2))
-                rgb_now <= COLOR_RBAR;
-
-            // ball
-            if ((x >= ball_x - BALL_R && x <= ball_x + BALL_R) &&
-                (y >= ball_y - BALL_R && y <= ball_y + BALL_R))
-                rgb_now <= COLOR_BALL;
-
-            // score
-            if (x >= 6 && x <= 12)
-                if (y / 6 % 2 == 1 && lscore > y / 6 / 2)
-                    rgb_now <= COLOR_LBAR;
-            if (x >= 628 && x <= 634)
-                if (y / 6 % 2 == 1 && rscore > y / 6 / 2)
-                    rgb_now <= COLOR_RBAR;
+              else
+                rgb_now <= COLOR_UARROW;
+            end
 
         end else begin
             // outside of the display area, fill black
@@ -130,5 +177,6 @@ module graphic(
     end
 
     assign rgb = rgb_now;
+    assign score_out = score;
 
 endmodule

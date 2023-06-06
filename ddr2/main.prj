@@ -1,4 +1,5 @@
 verilog work "timer_1ms.v"
+verilog work "lfsr.v"
 verilog work "clk_pixel.v"
 verilog work "vga_sync.v"
 verilog work "graphic.v"

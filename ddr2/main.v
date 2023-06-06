@@ -2,31 +2,33 @@
 
  module main(
     input wire clk,
-    input wire [1:0] miao,
     input wire BtnU,
     input wire BtnD,
     input wire BtnL,
     input wire BtnR,
     input wire BtnM,
+    input wire sw,
     output wire hsync, vsync,
     output wire [7:0] rgb
 );
-
+    
     wire [10:0] x, y;
     vga_sync vga0(.clk(clk),
         .hsync(hsync), .vsync(vsync),
         .x(x), .y(y));
 
     wire reset_out;
-    wire [1:0] btn1_out, btn2_out;
-    debounce b0(clk, BtnU, btn1_out[0]);
-    debounce b1(clk, BtnD, btn1_out[1]);
-    debounce b2(clk, BtnL, btn2_out[0]);
-    debounce b3(clk, BtnR, btn2_out[1]);
+    wire Uo, Do, Lo, Ro;
+    debounce b0(clk, BtnU, Uo);
+    debounce b1(clk, BtnD, Do);
+    debounce b2(clk, BtnL, Lo);
+    debounce b3(clk, BtnR, Ro);
     debounce b4(clk, BtnM, reset_out);
+    
+    wire [10:0] score;
 
-    graphic g0(.clk(clk), .miao(miao), .reset(reset_out),
+    graphic g0(.clk(clk), .reset(sw),
         .x(x), .y(y), .rgb(rgb),
-        .btn1(btn1_out), .btn2(btn2_out));
+        .BtnU(Uo), .BtnL(Lo), .BtnR(Ro), .BtnD(Do), .score_out(score));
 
 endmodule
