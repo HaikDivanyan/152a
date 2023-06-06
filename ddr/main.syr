@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: main.prj
 
@@ -112,6 +112,11 @@ Parsing module <uart>.
 Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\ddr\uart_top.v" into library work
 Parsing module <uart_top>.
 Parsing verilog file "ddrdefs.v" included at line 8.
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\ddr\Debounce.v" into library work
+Parsing module <Debounce>.
+Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\ddr\datasender.v" into library work
+Parsing module <datasender>.
+Parsing verilog file "ddrdefs.v" included at line 25.
 Analyzing Verilog file "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" into library work
 Parsing module <main>.
 Parsing verilog file "ddrdefs.v" included at line 27.
@@ -121,6 +126,16 @@ Parsing verilog file "ddrdefs.v" included at line 27.
 =========================================================================
 
 Elaborating module <main>.
+
+Elaborating module <Debounce>.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\Debounce.v" Line 42: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" Line 59: Assignment to BtnU_d ignored, since the identifier is never used
+
+Elaborating module <datasender>.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\datasender.v" Line 62: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\datasender.v" Line 68: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\datasender.v" Line 80: Result of 5-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\datasender.v" Line 90: Result of 5-bit expression is truncated to fit in 4-bit target.
 
 Elaborating module <uart_top>.
 WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\uart_top.v" Line 60: Result of 4-bit expression is truncated to fit in 3-bit target.
@@ -141,8 +156,11 @@ WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\uart.v" Line 14
 WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\uart.v" Line 153: Result of 32-bit expression is truncated to fit in 3-bit target.
 WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\uart.v" Line 192: Result of 32-bit expression is truncated to fit in 4-bit target.
 WARNING:HDLCompiler:413 - "C:\Users\Student\Desktop\nf2\152a\ddr\uart.v" Line 209: Result of 32-bit expression is truncated to fit in 2-bit target.
-WARNING:HDLCompiler:1127 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" Line 52: Assignment to uart_tx_busy ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" Line 60: Net <btnM> does not have a driver.
+WARNING:HDLCompiler:1127 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" Line 65: Assignment to uart_rx_data ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" Line 66: Assignment to uart_rx_valid ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" Line 48: Net <arrowStatuses[31]> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" Line 49: Net <arrowLocs[6399]> does not have a driver.
+WARNING:Xst:2972 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" line 59. All outputs of instance <db1> of block <Debounce> are unconnected in block <main>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -153,36 +171,75 @@ Synthesizing Unit <main>.
         pauseWidth = 1
         nextSongWidth = 1
         scoreWidth = 2
-        arrowStatusWidth = 5
+        arrowStatusWidth = 4
         numBytesPerArrow = 2
         numArrowsPerType = 50
-        arrowLocsWidth = 500
-        totalBytes = 509
+        arrowLocsWidth = 400
+        totalBytes = 408
         totalWidth = 2
         totalWidthBits = 16
         uart_num_nib = 4
 WARNING:Xst:647 - Input <sw> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <BtnU> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <BtnD> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <BtnL> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <BtnR> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <BtnM> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" line 50: Output port <o_tx_busy> of the instance <uart_top_> is unconnected or connected to loadless signal.
-WARNING:Xst:653 - Signal <btnM> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" line 59: Output port <out> of the instance <db1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" line 59: Output port <edj> of the instance <db1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" line 59: Output port <rise> of the instance <db1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" line 59: Output port <fall> of the instance <db1> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" line 62: Output port <o_rx_data> of the instance <uart_top_> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\ddr\main.v" line 62: Output port <o_rx_valid> of the instance <uart_top_> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <arrowStatuses> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <arrowLocs> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <main> synthesized.
+
+Synthesizing Unit <datasender>.
+    Related source file is "C:\Users\Student\Desktop\nf2\152a\ddr\datasender.v".
+        pauseWidth = 1
+        nextSongWidth = 1
+        scoreWidth = 2
+        arrowStatusWidth = 4
+        numBytesPerArrow = 2
+        numArrowsPerType = 50
+        arrowLocsWidth = 400
+        totalBytes = 408
+        totalWidth = 2
+        totalWidthBits = 16
+        uart_num_nib = 4
+        stPauseNext = 0
+        stScore = 1
+        stStatus = 2
+        stArrows = 3
+        stIdle = 4
+WARNING:Xst:647 - Input <status> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <arrows> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <ready>.
+    Found 2-bit register for signal <statCntr>.
+    Found 100-bit register for signal <arCntr>.
+    Found 16-bit register for signal <data>.
+    Found 4-bit register for signal <stat>.
+    Found 4-bit adder for signal <stat[3]_GND_3_o_add_9_OUT> created at line 62.
+    Found 100-bit adder for signal <arCntr[99]_GND_3_o_add_24_OUT> created at line 88.
+    Found 100-bit comparator greater for signal <arCntr[99]_GND_3_o_LessThan_24_o> created at line 86
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 123 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred  23 Multiplexer(s).
+Unit <datasender> synthesized.
 
 Synthesizing Unit <uart_top>.
     Related source file is "C:\Users\Student\Desktop\nf2\152a\ddr\uart_top.v".
         pauseWidth = 1
         nextSongWidth = 1
         scoreWidth = 2
-        arrowStatusWidth = 5
+        arrowStatusWidth = 4
         numBytesPerArrow = 2
         numArrowsPerType = 50
-        arrowLocsWidth = 500
-        totalBytes = 509
+        arrowLocsWidth = 400
+        totalBytes = 408
         totalWidth = 2
         totalWidthBits = 16
         uart_num_nib = 4
@@ -196,7 +253,7 @@ INFO:Xst:3210 - "C:\Users\Student\Desktop\nf2\152a\ddr\uart_top.v" line 120: Out
     Found 16-bit register for signal <tx_data>.
     Found 1-bit register for signal <tfifo_rd_z>.
     Found 3-bit register for signal <state>.
-    Found 3-bit adder for signal <state[2]_GND_2_o_add_5_OUT> created at line 60.
+    Found 3-bit adder for signal <state[2]_GND_4_o_add_5_OUT> created at line 60.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  20 D-type flip-flop(s).
@@ -215,10 +272,10 @@ Synthesizing Unit <uart_fifo>.
     Found 1-bit register for signal <fifo_empty>.
     Found 8-bit register for signal <fifo_out>.
     Found 10-bit register for signal <wp>.
-    Found 10-bit adder for signal <wp[9]_GND_3_o_mux_13_OUT> created at line 50.
-    Found 10-bit adder for signal <rp[9]_GND_3_o_mux_14_OUT> created at line 51.
-    Found 10-bit adder for signal <fifo_cnt[9]_GND_3_o_add_3_OUT> created at line 55.
-    Found 10-bit subtractor for signal <GND_3_o_GND_3_o_sub_6_OUT<9:0>> created at line 61.
+    Found 10-bit adder for signal <wp[9]_GND_5_o_add_1_OUT> created at line 50.
+    Found 10-bit adder for signal <rp[9]_GND_5_o_add_2_OUT> created at line 51.
+    Found 10-bit adder for signal <fifo_cnt[9]_GND_5_o_add_3_OUT> created at line 55.
+    Found 10-bit subtractor for signal <GND_5_o_GND_5_o_sub_6_OUT<9:0>> created at line 61.
     Summary:
 	inferred   1 RAM(s).
 	inferred   4 Adder/Subtractor(s).
@@ -249,18 +306,20 @@ Synthesizing Unit <uart>.
     Found 1-bit register for signal <tx_out>.
     Found 8-bit register for signal <tx_data>.
     Found 3-bit register for signal <recv_state>.
-    Found 11-bit subtractor for signal <GND_4_o_GND_4_o_sub_9_OUT<10:0>> created at line 90.
-    Found 6-bit subtractor for signal <GND_4_o_GND_4_o_sub_11_OUT<5:0>> created at line 93.
-    Found 11-bit subtractor for signal <GND_4_o_GND_4_o_sub_14_OUT<10:0>> created at line 95.
-    Found 6-bit subtractor for signal <GND_4_o_GND_4_o_sub_16_OUT<5:0>> created at line 98.
-    Found 4-bit subtractor for signal <GND_4_o_GND_4_o_sub_30_OUT<3:0>> created at line 138.
-    Found 4-bit subtractor for signal <GND_4_o_GND_4_o_sub_54_OUT<3:0>> created at line 192.
+    Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_9_OUT<10:0>> created at line 90.
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_11_OUT<5:0>> created at line 93.
+    Found 11-bit subtractor for signal <GND_6_o_GND_6_o_sub_14_OUT<10:0>> created at line 95.
+    Found 6-bit subtractor for signal <GND_6_o_GND_6_o_sub_16_OUT<5:0>> created at line 98.
+    Found 4-bit subtractor for signal <GND_6_o_GND_6_o_sub_30_OUT<3:0>> created at line 138.
+    Found 4-bit subtractor for signal <GND_6_o_GND_6_o_sub_54_OUT<3:0>> created at line 192.
+    Found 3-bit 8-to-1 multiplexer for signal <recv_state[2]_recv_state[2]_wide_mux_41_OUT> created at line 102.
     Found 6-bit 7-to-1 multiplexer for signal <recv_state[2]_rx_countdown[5]_wide_mux_42_OUT> created at line 102.
+    Found 2-bit 4-to-1 multiplexer for signal <tx_state[1]_tx_state[1]_wide_mux_64_OUT> created at line 173.
     Found 6-bit 3-to-1 multiplexer for signal <tx_state[1]_tx_countdown[5]_wide_mux_68_OUT> created at line 173.
     Summary:
 	inferred   6 Adder/Subtractor(s).
 	inferred  64 D-type flip-flop(s).
-	inferred  29 Multiplexer(s).
+	inferred  31 Multiplexer(s).
 Unit <uart> synthesized.
 
 =========================================================================
@@ -269,30 +328,38 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  1024x8-bit dual-port RAM                              : 1
-# Adders/Subtractors                                   : 11
+# Adders/Subtractors                                   : 13
  10-bit adder                                          : 3
  10-bit subtractor                                     : 1
+ 100-bit adder                                         : 1
  11-bit subtractor                                     : 2
  3-bit adder                                           : 1
+ 4-bit adder                                           : 1
  4-bit subtractor                                      : 2
  6-bit subtractor                                      : 2
-# Registers                                            : 20
- 1-bit register                                        : 4
+# Registers                                            : 25
+ 1-bit register                                        : 5
  10-bit register                                       : 3
+ 100-bit register                                      : 1
  11-bit register                                       : 2
- 16-bit register                                       : 1
- 2-bit register                                        : 1
+ 16-bit register                                       : 2
+ 2-bit register                                        : 2
  3-bit register                                        : 2
- 4-bit register                                        : 2
+ 4-bit register                                        : 3
  6-bit register                                        : 2
  8-bit register                                        : 3
-# Multiplexers                                         : 34
- 1-bit 2-to-1 multiplexer                              : 2
+# Comparators                                          : 1
+ 100-bit comparator greater                            : 1
+# Multiplexers                                         : 59
+ 1-bit 2-to-1 multiplexer                              : 6
+ 100-bit 2-to-1 multiplexer                            : 5
  11-bit 2-to-1 multiplexer                             : 6
- 16-bit 2-to-1 multiplexer                             : 2
- 2-bit 2-to-1 multiplexer                              : 2
- 3-bit 2-to-1 multiplexer                              : 9
- 4-bit 2-to-1 multiplexer                              : 2
+ 16-bit 2-to-1 multiplexer                             : 3
+ 2-bit 2-to-1 multiplexer                              : 5
+ 2-bit 4-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 8
+ 3-bit 8-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 13
  6-bit 2-to-1 multiplexer                              : 8
  6-bit 3-to-1 multiplexer                              : 1
  6-bit 7-to-1 multiplexer                              : 1
@@ -343,26 +410,33 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  1024x8-bit dual-port block RAM                        : 1
-# Adders/Subtractors                                   : 8
+# Adders/Subtractors                                   : 10
  10-bit adder                                          : 1
  10-bit subtractor                                     : 1
+ 100-bit adder                                         : 1
  11-bit subtractor                                     : 2
  3-bit adder                                           : 1
+ 4-bit adder                                           : 1
  4-bit subtractor                                      : 1
  6-bit subtractor                                      : 2
 # Counters                                             : 1
  4-bit down counter                                    : 1
 # Accumulators                                         : 2
  10-bit up accumulator                                 : 2
-# Registers                                            : 92
- Flip-Flops                                            : 92
-# Multiplexers                                         : 43
- 1-bit 2-to-1 multiplexer                              : 14
+# Registers                                            : 215
+ Flip-Flops                                            : 215
+# Comparators                                          : 1
+ 100-bit comparator greater                            : 1
+# Multiplexers                                         : 68
+ 1-bit 2-to-1 multiplexer                              : 18
+ 100-bit 2-to-1 multiplexer                            : 5
  11-bit 2-to-1 multiplexer                             : 6
- 16-bit 2-to-1 multiplexer                             : 2
- 2-bit 2-to-1 multiplexer                              : 2
- 3-bit 2-to-1 multiplexer                              : 9
- 4-bit 2-to-1 multiplexer                              : 1
+ 16-bit 2-to-1 multiplexer                             : 3
+ 2-bit 2-to-1 multiplexer                              : 5
+ 2-bit 4-to-1 multiplexer                              : 1
+ 3-bit 2-to-1 multiplexer                              : 8
+ 3-bit 8-to-1 multiplexer                              : 1
+ 4-bit 2-to-1 multiplexer                              : 12
  6-bit 2-to-1 multiplexer                              : 6
  6-bit 3-to-1 multiplexer                              : 1
  6-bit 7-to-1 multiplexer                              : 1
@@ -373,30 +447,177 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1710 - FF/Latch <statCntr_0> (without init value) has a constant value of 0 in block <datasender>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <statCntr_1> (without init value) has a constant value of 0 in block <datasender>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_0> (without init value) has a constant value of 0 in block <datasender>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_3> (without init value) has a constant value of 0 in block <datasender>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_9> (without init value) has a constant value of 0 in block <datasender>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_10> (without init value) has a constant value of 0 in block <datasender>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <data_11> (without init value) has a constant value of 0 in block <datasender>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <data_4> in Unit <datasender> is equivalent to the following FF/Latch, which will be removed : <data_7> 
+INFO:Xst:2261 - The FF/Latch <data_5> in Unit <datasender> is equivalent to the following 5 FFs/Latches, which will be removed : <data_6> <data_12> <data_13> <data_14> <data_15> 
+INFO:Xst:2261 - The FF/Latch <data_1> in Unit <datasender> is equivalent to the following FF/Latch, which will be removed : <data_2> 
 
 Optimizing unit <main> ...
+
+Optimizing unit <datasender> ...
+WARNING:Xst:1710 - FF/Latch <stat_3> (without init value) has a constant value of 0 in block <datasender>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <uart_top> ...
 
 Optimizing unit <uart> ...
 
 Optimizing unit <uart_fifo> ...
-WARNING:Xst:1293 - FF/Latch <uart_top_/uart_/tx_clk_divider_10> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_9> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_8> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_7> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_6> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <uart_top_/tx_data_3> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <uart_top_/tx_data_0> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_bits_remaining_3> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_bits_remaining_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_bits_remaining_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_bits_remaining_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_countdown_5> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_countdown_4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_countdown_3> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_countdown_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_countdown_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_countdown_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_10> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_9> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_8> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_7> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_6> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_5> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_3> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_clk_divider_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/recv_state_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/recv_state_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/recv_state_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_data_7> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_data_6> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_data_5> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_data_4> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_data_3> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_data_2> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_data_1> of sequential type is unconnected in block <main>.
+WARNING:Xst:2677 - Node <uart_top_/uart_/rx_data_0> of sequential type is unconnected in block <main>.
+WARNING:Xst:1710 - FF/Latch <datasender_/arCntr_21> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_22> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_23> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_24> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_25> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_26> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_27> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_28> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_29> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_30> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_31> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_32> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_33> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_34> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_35> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_36> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_37> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_38> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_39> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_40> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_41> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_42> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_43> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_44> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_45> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_46> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_5> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/rx_clk_divider_10> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/rx_clk_divider_9> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/rx_clk_divider_8> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/rx_clk_divider_7> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/rx_clk_divider_6> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/rx_clk_divider_5> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_6> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_7> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_8> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_9> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <uart_top_/uart_/tx_clk_divider_10> has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_0> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_1> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_2> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_3> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_4> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_5> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_6> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_7> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_8> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_9> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_10> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_11> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_12> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_13> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_14> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_15> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_16> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_17> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_18> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_19> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_20> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_74> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_75> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_76> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_77> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_78> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_79> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_80> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_81> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_82> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_83> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_84> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_85> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_86> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_87> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_88> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_89> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_90> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_91> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_92> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_93> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_94> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_95> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_96> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_97> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_98> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_99> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_47> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_48> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_49> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_50> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_51> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_52> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_53> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_54> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_55> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_56> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_57> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_58> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_59> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_60> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_61> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_62> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_63> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_64> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_65> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_66> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_67> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_68> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_69> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_70> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_71> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_72> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <datasender_/arCntr_73> (without init value) has a constant value of 0 in block <main>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <uart_top_/tx_data_10> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <uart_top_/tx_data_9> 
+INFO:Xst:2261 - The FF/Latch <uart_top_/tx_data_14> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <uart_top_/tx_data_13> 
+INFO:Xst:2261 - The FF/Latch <uart_top_/tx_data_2> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <uart_top_/tx_data_1> 
+INFO:Xst:2261 - The FF/Latch <uart_top_/tx_data_6> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <uart_top_/tx_data_5> 
+INFO:Xst:2261 - The FF/Latch <uart_top_/tx_data_7> in Unit <main> is equivalent to the following FF/Latch, which will be removed : <uart_top_/tx_data_4> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 2.
+Found area constraint ratio of 100 (+ 5) on block main, actual ratio is 1.
+FlipFlop uart_top_/uart_/tx_state_0 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
@@ -404,8 +625,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 104
- Flip-Flops                                            : 104
+# Registers                                            : 80
+ Flip-Flops                                            : 80
 
 =========================================================================
 
@@ -428,24 +649,27 @@ Top Level Output File Name         : main.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 184
+# BELS                             : 143
 #      GND                         : 1
-#      INV                         : 2
-#      LUT2                        : 7
-#      LUT3                        : 16
-#      LUT4                        : 26
-#      LUT5                        : 49
-#      LUT6                        : 82
+#      INV                         : 1
+#      LUT2                        : 5
+#      LUT3                        : 17
+#      LUT4                        : 36
+#      LUT5                        : 26
+#      LUT6                        : 55
+#      MUXF7                       : 1
 #      VCC                         : 1
-# FlipFlops/Latches                : 104
-#      FD                          : 88
-#      FDE                         : 16
+# FlipFlops/Latches                : 80
+#      FD                          : 23
+#      FDE                         : 21
+#      FDR                         : 35
+#      FDS                         : 1
 # RAMS                             : 1
 #      RAMB8BWER                   : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 2
-#      IBUF                        : 1
+# IO Buffers                       : 3
+#      IBUF                        : 2
 #      OBUF                        : 1
 
 Device utilization summary:
@@ -455,20 +679,20 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             104  out of  18224     0%  
- Number of Slice LUTs:                  182  out of   9112     1%  
-    Number used as Logic:               182  out of   9112     1%  
+ Number of Slice Registers:              80  out of  18224     0%  
+ Number of Slice LUTs:                  140  out of   9112     1%  
+    Number used as Logic:               140  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    182
-   Number with an unused Flip Flop:      78  out of    182    42%  
-   Number with an unused LUT:             0  out of    182     0%  
-   Number of fully used LUT-FF pairs:   104  out of    182    57%  
-   Number of unique control sets:         4
+ Number of LUT Flip Flop pairs used:    141
+   Number with an unused Flip Flop:      61  out of    141    43%  
+   Number with an unused LUT:             1  out of    141     0%  
+   Number of fully used LUT-FF pairs:    79  out of    141    56%  
+   Number of unique control sets:         5
 
 IO Utilization: 
  Number of IOs:                          16
- Number of bonded IOBs:                   3  out of    232     1%  
+ Number of bonded IOBs:                   4  out of    232     1%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                1  out of     32     3%  
@@ -496,7 +720,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 105   |
+clk                                | BUFGP                  | 81    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -507,9 +731,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.861ns (Maximum Frequency: 205.725MHz)
-   Minimum input arrival time before clock: 4.756ns
-   Maximum output required time after clock: 3.634ns
+   Minimum period: 4.094ns (Maximum Frequency: 244.275MHz)
+   Minimum input arrival time before clock: 5.742ns
+   Maximum output required time after clock: 3.701ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -518,56 +742,54 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.861ns (frequency: 205.725MHz)
-  Total number of paths / destination ports: 1661 / 146
+  Clock period: 4.094ns (frequency: 244.275MHz)
+  Total number of paths / destination ports: 1117 / 118
 -------------------------------------------------------------------------
-Delay:               4.861ns (Levels of Logic = 4)
-  Source:            uart_top_/uart_/tx_clk_divider_4 (FF)
-  Destination:       uart_top_/uart_/tx_data_7 (FF)
+Delay:               4.094ns (Levels of Logic = 3)
+  Source:            uart_top_/state_2 (FF)
+  Destination:       uart_top_/tfifo_/wp_8 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: uart_top_/uart_/tx_clk_divider_4 to uart_top_/uart_/tx_data_7
+  Data Path: uart_top_/state_2 to uart_top_/tfifo_/wp_8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               5   0.447   1.059  uart_top_/uart_/tx_clk_divider_4 (uart_top_/uart_/tx_clk_divider_4)
-     LUT5:I0->O            9   0.203   0.830  uart_top_/uart_/GND_4_o_reduce_nor_15_o1 (uart_top_/uart_/GND_4_o_reduce_nor_15_o)
-     LUT5:I4->O            8   0.205   0.803  uart_top_/uart_/n0056 (uart_top_/uart_/n0056)
-     LUT5:I4->O            8   0.205   0.803  uart_top_/uart_/_n0245_inv1_rstpot (uart_top_/uart_/_n0245_inv1_rstpot)
-     LUT5:I4->O            1   0.205   0.000  uart_top_/uart_/tx_data_0_dpot (uart_top_/uart_/tx_data_0_dpot)
-     FDE:D                     0.102          uart_top_/uart_/tx_data_0
+     FDR:C->Q             18   0.447   1.278  uart_top_/state_2 (uart_top_/state_2)
+     LUT4:I1->O           19   0.205   1.072  uart_top_/tfifo_/wr1 (uart_top_/tfifo_/wr)
+     LUT5:I4->O            1   0.205   0.580  uart_top_/tfifo_/Maccum_wp_xor<8>11_SW0 (N92)
+     LUT6:I5->O            1   0.205   0.000  uart_top_/tfifo_/Maccum_wp_xor<8>11 (uart_top_/tfifo_/Result<8>1)
+     FDR:D                     0.102          uart_top_/tfifo_/wp_8
     ----------------------------------------
-    Total                      4.861ns (1.367ns logic, 3.494ns route)
-                                       (28.1% logic, 71.9% route)
+    Total                      4.094ns (1.164ns logic, 2.930ns route)
+                                       (28.4% logic, 71.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 23 / 19
+  Total number of paths / destination ports: 128 / 92
 -------------------------------------------------------------------------
-Offset:              4.756ns (Levels of Logic = 4)
-  Source:            RsRx (PAD)
-  Destination:       uart_top_/uart_/recv_state_2 (FF)
+Offset:              5.742ns (Levels of Logic = 3)
+  Source:            BtnL (PAD)
+  Destination:       uart_top_/uart_/tx_data_7 (FF)
   Destination Clock: clk rising
 
-  Data Path: RsRx to uart_top_/uart_/recv_state_2
+  Data Path: BtnL to uart_top_/uart_/tx_data_7
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            18   1.222   1.414  RsRx_IBUF (RsRx_IBUF)
-     LUT6:I0->O            1   0.203   0.827  uart_top_/uart_/Mmux_recv_state[2]_recv_state[2]_wide_mux_41_OUT3_SW0_SW0 (N67)
-     LUT6:I2->O            1   0.203   0.580  uart_top_/uart_/Mmux_recv_state[2]_recv_state[2]_wide_mux_41_OUT3 (uart_top_/uart_/recv_state[2]_recv_state[2]_wide_mux_41_OUT<2>)
-     LUT3:I2->O            1   0.205   0.000  uart_top_/uart_/recv_state_2_rstpot (uart_top_/uart_/recv_state_2_rstpot)
-     FD:D                      0.102          uart_top_/uart_/recv_state_2
+     IBUF:I->O            72   1.222   2.057  BtnL_IBUF (BtnL_IBUF)
+     LUT6:I0->O            1   0.203   0.827  uart_top_/uart_/n0056_SW1 (N82)
+     LUT6:I2->O           12   0.203   0.908  uart_top_/uart_/_n0231_inv1 (uart_top_/uart_/_n0231_inv)
+     FDE:CE                    0.322          uart_top_/uart_/tx_data_0
     ----------------------------------------
-    Total                      4.756ns (1.935ns logic, 2.821ns route)
-                                       (40.7% logic, 59.3% route)
+    Total                      5.742ns (1.950ns logic, 3.792ns route)
+                                       (34.0% logic, 66.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
   Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              3.634ns (Levels of Logic = 1)
+Offset:              3.701ns (Levels of Logic = 1)
   Source:            uart_top_/uart_/tx_out (FF)
   Destination:       RsTx (PAD)
   Source Clock:      clk rising
@@ -576,11 +798,11 @@ Offset:              3.634ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.447   0.616  uart_top_/uart_/tx_out (uart_top_/uart_/tx_out)
+     FD:C->Q               4   0.447   0.683  uart_top_/uart_/tx_out (uart_top_/uart_/tx_out)
      OBUF:I->O                 2.571          RsTx_OBUF (RsTx)
     ----------------------------------------
-    Total                      3.634ns (3.018ns logic, 0.616ns route)
-                                       (83.0% logic, 17.0% route)
+    Total                      3.701ns (3.018ns logic, 0.683ns route)
+                                       (81.6% logic, 18.4% route)
 
 =========================================================================
 
@@ -592,20 +814,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.861|         |         |         |
+clk            |    4.094|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 3.00 secs
-Total CPU time to Xst completion: 3.68 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.26 secs
  
 --> 
 
-Total memory usage is 228084 kilobytes
+Total memory usage is 230132 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   35 (   0 filtered)
-Number of infos    :    5 (   0 filtered)
+Number of warnings :  181 (   0 filtered)
+Number of infos    :   18 (   0 filtered)
 

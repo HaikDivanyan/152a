@@ -18,7 +18,12 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module datasender(input clk, input tx_ready, input startSend, input pause, input nextSong, input [(scoreWidth*8)-1:0] score, input [7:0] status [arrowStatusWidth-1:0], input [(numBytesPerArrow*8)-1:0] arrows [(4 * numArrowsPerType)-1:0], output [totalWidthBits-1:0] out_data, output out_valid);
+
+
+module datasender(input clk, input rst, input tx_ready, input startSend, input pause, input nextSong, input [(scoreWidth*8)-1:0] score, input [31:0] status, input [6399:0] arrows, output [totalWidthBits-1:0] out_data, output out_valid);
+
+`include "ddrdefs.v"
+
 reg [3:0] stat;
 reg [totalWidthBits-1:0] data;
 reg ready;
@@ -26,7 +31,7 @@ reg [1:0] statCntr;
 reg [99:0] arCntr;
 
 assign out_data = data;
-assign out_ready = ready;
+assign out_valid = ready;
 
 
 parameter stPauseNext = 0;
@@ -37,7 +42,13 @@ parameter stIdle = 4;
 
 
 always @ (posedge clk) begin
-  if (startSend) begin
+  if (rst) begin
+    stat = 4;
+    ready = 0;
+    statCntr = 0;
+    arCntr = 0;
+  end
+  if (startSend == 1) begin
     stat = 0;
     ready = 0;
     statCntr = 0;
@@ -61,10 +72,11 @@ always @ (posedge clk) begin
         ready = 1;
         case (statCntr)
           0:
-            data = {status[0], status[1]};
+            data = 16'b1111000011110000;//{status[0], status[1]};
           
           1: begin
-            data = {status[2], status[3]};
+            data = 16'b1111000011110000;
+            //data = {status[2], status[3]};
             stat = stat+1;
           end
         endcase
@@ -72,7 +84,7 @@ always @ (posedge clk) begin
     stArrows:
       if (tx_ready) begin
         if (arCntr < 4 * numArrowsPerType) begin
-          data = arrows[arCntr];
+          data = 16'd150;//arrows[arCntr];
           arCntr = arCntr + 1;
           ready = 1;
         end else stat = stat + 1;

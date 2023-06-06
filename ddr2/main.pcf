@@ -1,0 +1,50 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Jun 05 17:36:28 2023
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "BtnD" LOCATE = SITE "C9" LEVEL 1;
+COMP "BtnL" LOCATE = SITE "C4" LEVEL 1;
+COMP "BtnM" LOCATE = SITE "B8" LEVEL 1;
+COMP "BtnR" LOCATE = SITE "D9" LEVEL 1;
+COMP "BtnU" LOCATE = SITE "A8" LEVEL 1;
+COMP "hsync" LOCATE = SITE "N6" LEVEL 1;
+COMP "vsync" LOCATE = SITE "P7" LEVEL 1;
+COMP "rgb<0>" LOCATE = SITE "U7" LEVEL 1;
+COMP "rgb<1>" LOCATE = SITE "V7" LEVEL 1;
+COMP "rgb<2>" LOCATE = SITE "N7" LEVEL 1;
+COMP "rgb<3>" LOCATE = SITE "P8" LEVEL 1;
+COMP "rgb<4>" LOCATE = SITE "T6" LEVEL 1;
+COMP "rgb<5>" LOCATE = SITE "V6" LEVEL 1;
+COMP "rgb<6>" LOCATE = SITE "R7" LEVEL 1;
+COMP "rgb<7>" LOCATE = SITE "T7" LEVEL 1;
+TIMEGRP sys_clk_pin = BEL "g0/ball_move_y" BEL "g0/ball_move_x" BEL
+        "g0/BAR_W_0" BEL "g0/lbar_y_0" BEL "g0/lbar_y_1" BEL "g0/lbar_y_2" BEL
+        "g0/lbar_y_3" BEL "g0/lbar_y_4" BEL "g0/lbar_y_5" BEL "g0/lbar_y_6"
+        BEL "g0/lbar_y_7" BEL "g0/lbar_y_8" BEL "g0/BAR_H_1" BEL "g0/rbar_y_0"
+        BEL "g0/rbar_y_1" BEL "g0/rbar_y_2" BEL "g0/rbar_y_3" BEL
+        "g0/rbar_y_4" BEL "g0/rbar_y_5" BEL "g0/rbar_y_6" BEL "g0/rbar_y_7"
+        BEL "g0/rbar_y_8" BEL "g0/ball_y_0" BEL "g0/ball_y_1" BEL
+        "g0/ball_y_2" BEL "g0/ball_y_3" BEL "g0/ball_y_4" BEL "g0/ball_y_5"
+        BEL "g0/ball_y_6" BEL "g0/ball_y_7" BEL "g0/ball_y_8" BEL
+        "g0/ball_x_1" BEL "g0/ball_x_2" BEL "g0/ball_x_3" BEL "g0/ball_x_4"
+        BEL "g0/ball_x_5" BEL "g0/ball_x_6" BEL "g0/ball_x_7" BEL
+        "g0/ball_x_8" BEL "g0/ball_x_9" BEL "g0/rscore_0" BEL "g0/rscore_1"
+        BEL "g0/rscore_2" BEL "g0/rscore_3" BEL "g0/rscore_4" BEL
+        "g0/rscore_5" BEL "g0/lscore_0" BEL "g0/lscore_1" BEL "g0/lscore_2"
+        BEL "g0/lscore_3" BEL "g0/lscore_4" BEL "g0/lscore_5" BEL
+        "g0/rgb_now_0" BEL "g0/rgb_now_1" BEL "g0/rgb_now_2" BEL
+        "g0/rgb_now_3" BEL "g0/rgb_now_5" BEL "g0/rgb_now_6" BEL
+        "g0/rgb_now_7" BEL "vga0/clk0/clk_pixel" BEL "vga0/clk0/cnt" BEL
+        "b0/m0/clk_1ms" BEL "b0/m0/cnt_0" BEL "b0/m0/cnt_1" BEL "b0/m0/cnt_2"
+        BEL "b0/m0/cnt_3" BEL "b0/m0/cnt_4" BEL "b0/m0/cnt_5" BEL
+        "b0/m0/cnt_6" BEL "b0/m0/cnt_7" BEL "b0/m0/cnt_8" BEL "b0/m0/cnt_9"
+        BEL "b0/m0/cnt_10" BEL "b0/m0/cnt_11" BEL "b0/m0/cnt_12" BEL
+        "b0/m0/cnt_13" BEL "b0/m0/cnt_14" BEL "b0/m0/cnt_15" BEL
+        "g0/ball_move_x_1" BEL "g0/BAR_H_1_1" BEL "g0/ball_y_0_1" BEL
+        "g0/BAR_H_1_2" BEL "g0/ball_move_x_2" BEL "g0/ball_y_0_2" BEL
+        "clk_BUFGP/BUFG";
+TS_sys_clk_pin = PERIOD TIMEGRP "sys_clk_pin" 100 MHz HIGH 50%;
+SCHEMATIC END;
+

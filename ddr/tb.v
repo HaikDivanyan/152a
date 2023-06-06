@@ -57,12 +57,17 @@ module tb;
 		RsRx = 0;
 		BtnU = 0;
 		BtnD = 0;
-		BtnL = 0;
+		BtnL = 1;
 		BtnR = 0;
 		BtnM = 0;
 
 		// Wait 100 ns for global reset to finish
+    #100
+    BtnL = 0;
 		#100;
+    BtnU = 1;
+    #100
+    BtnU = 0;
         
 		// Add stimulus here
     

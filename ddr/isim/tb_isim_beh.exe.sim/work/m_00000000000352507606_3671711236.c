@@ -23,6 +23,7 @@
 #endif
 static const char *ng0 = "C:/Users/Student/Desktop/nf2/152a/ddr/tb.v";
 static int ng1[] = {0, 0};
+static int ng2[] = {1, 0};
 
 
 
@@ -31,6 +32,7 @@ static void Initial_53_0(char *t0)
     char *t1;
     char *t2;
     char *t3;
+    char *t4;
 
 LAB0:    t1 = (t0 + 1996U);
     t2 = *((char **)t1);
@@ -62,7 +64,7 @@ LAB4:    xsi_set_current_line(55, ng0);
     t3 = (t0 + 1196);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
     xsi_set_current_line(60, ng0);
-    t2 = ((char*)((ng1)));
+    t2 = ((char*)((ng2)));
     t3 = (t0 + 1288);
     xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
     xsi_set_current_line(61, ng0);
@@ -79,11 +81,35 @@ LAB4:    xsi_set_current_line(55, ng0);
     *((char **)t1) = &&LAB5;
 
 LAB1:    return;
-LAB5:    goto LAB1;
+LAB5:    xsi_set_current_line(66, ng0);
+    t3 = ((char*)((ng1)));
+    t4 = (t0 + 1288);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
+    xsi_set_current_line(67, ng0);
+    t2 = (t0 + 1896);
+    xsi_process_wait(t2, 100000LL);
+    *((char **)t1) = &&LAB6;
+    goto LAB1;
+
+LAB6:    xsi_set_current_line(68, ng0);
+    t2 = ((char*)((ng2)));
+    t3 = (t0 + 1104);
+    xsi_vlogvar_assign_value(t3, t2, 0, 0, 1);
+    xsi_set_current_line(69, ng0);
+    t2 = (t0 + 1896);
+    xsi_process_wait(t2, 100000LL);
+    *((char **)t1) = &&LAB7;
+    goto LAB1;
+
+LAB7:    xsi_set_current_line(70, ng0);
+    t3 = ((char*)((ng1)));
+    t4 = (t0 + 1104);
+    xsi_vlogvar_assign_value(t4, t3, 0, 0, 1);
+    goto LAB1;
 
 }
 
-static void Always_71_1(char *t0)
+static void Always_76_1(char *t0)
 {
     char t3[8];
     char *t1;
@@ -117,13 +143,13 @@ LAB0:    t1 = (t0 + 2140U);
 
 LAB3:    goto *t2;
 
-LAB2:    xsi_set_current_line(71, ng0);
+LAB2:    xsi_set_current_line(76, ng0);
     t2 = (t0 + 2040);
     xsi_process_wait(t2, 5000LL);
     *((char **)t1) = &&LAB4;
 
 LAB1:    return;
-LAB4:    xsi_set_current_line(71, ng0);
+LAB4:    xsi_set_current_line(76, ng0);
     t4 = (t0 + 828);
     t5 = (t4 + 36U);
     t6 = *((char **)t5);
@@ -177,7 +203,7 @@ LAB10:    t18 = *((unsigned int *)t3);
 
 extern void work_m_00000000000352507606_3671711236_init()
 {
-	static char *pe[] = {(void *)Initial_53_0,(void *)Always_71_1};
+	static char *pe[] = {(void *)Initial_53_0,(void *)Always_76_1};
 	xsi_register_didat("work_m_00000000000352507606_3671711236", "isim/tb_isim_beh.exe.sim/work/m_00000000000352507606_3671711236.didat");
 	xsi_register_executes(pe);
 }

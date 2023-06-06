@@ -11,7 +11,7 @@ module Debounce
     output reg fall   // Goes high for 1 clock cycle on the falling edge of output.
 );
 
-    localparam COUNTER_BITS = $clog2(MAX_COUNT);
+    localparam COUNTER_BITS = 4;
 
     reg [COUNTER_BITS - 1 : 0] counter;
     wire w_edj;
@@ -47,3 +47,4 @@ module Debounce
     assign w_edj = in ^ out;
     assign w_rise = in & ~out;
     assign w_fall = ~in & out;
+endmodule
