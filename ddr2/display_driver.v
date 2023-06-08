@@ -51,8 +51,6 @@ module displayDriver(clk, rst, seconds1, seconds2, minutes1, minutes2, seg, an);
         9 : segin = 7'b0010000;
       endcase
     end
-    else 
-      anin = 4'b1111;
   end
 
 endmodule

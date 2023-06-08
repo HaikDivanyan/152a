@@ -106,7 +106,7 @@ module BtoBCD(
             97: bcd <= 16'h0097;
             98: bcd <= 16'h0098;
             99: bcd <= 16'h0099;
-            default: bcd <= 16'h0000;
+            default: bcd <= 16'h0099;
         endcase
     end
 endmodule 

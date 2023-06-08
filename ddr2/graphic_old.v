@@ -19,7 +19,7 @@ module graphic(
     localparam COLOR_LARROW = 8'b11011101;
     localparam COLOR_RARROW = 8'b10010111;
     localparam COLOR_UARROW = 8'b00101011;
-    localparam COLOR_DARROW = 8'b10110111;
+    localparam COLOR_DARROW = 8'b1011011;
     localparam COLOR_NULL = 8'b00000000;
     
 
@@ -36,12 +36,11 @@ module graphic(
     localparam SCORE_LINE_WIDTH = 11'd2;
     localparam SCORE_LINE_Y = 11'd400;
 
-    // localparam ARR_V = 10'd1;
+    localparam ARR_V = 10'd1;
     localparam SCORE_TOLERANCE = 11'd8;
-    reg [5:0] ARR_V;
 
     localparam MAX_ARROWS = 10;
-    reg [15:0] score;
+    reg [10:0] score;
     reg [10:0] UArrows [MAX_ARROWS - 1:0];
     reg [10:0] LArrows [MAX_ARROWS - 1:0];
     reg [10:0] DArrows [MAX_ARROWS - 1:0];
@@ -70,7 +69,6 @@ module graphic(
             Rloc = 0;
             score = 0;
             frame_count = 0;
-            ARR_V = 1;
         end
         
         
@@ -78,7 +76,7 @@ module graphic(
         if (clk_frame) begin
             frame_count = frame_count + 1;
             //generate new arrow every at certain frequency randomly choose which arrow type
-            if(frame_count >= 200 - score << 2) begin
+            if(frame_count >= 200) begin
                 frame_count = 0;
                 case (rand[1:0]) 
                     0: begin
@@ -108,16 +106,6 @@ module graphic(
                 endcase
             end
 
-            if (score > 5) begin
-                if (score > 10) begin
-                    if (score > 15) begin
-                        if (score > 20) begin
-                            ARR_V = 5;
-                        end else ARR_V = 4;
-                    end else ARR_V = 3;
-                end else ARR_V = 2;
-            end else ARR_V = 1;
-
             //check for correct presses
             //move arrows down
             for (i = 0; i < MAX_ARROWS; i = i+1) begin
@@ -135,29 +123,21 @@ module graphic(
                 end
                 
                 
-                if (BtnU) begin
-                    if (UArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && UArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE) begin
-                        UArrows[i] = 0;
-                        score = score + 1;
-                    end else if (score > 0) score = score - 1;
+                if (BtnU && (UArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && UArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE)) begin
+                    UArrows[i] = 0;
+                    score = score + 1;
                 end
-                if (BtnD) begin
-                    if (DArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && DArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE) begin
-                        DArrows[i] = 0;
-                        score = score + 1;
-                    end else if (score > 0) score = score - 1;
+                if (BtnD && (DArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && DArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE)) begin
+                    DArrows[i] = 0;
+                    score = score + 1;
                 end
-                if (BtnL) begin
-                    if (LArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && LArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE) begin
-                        LArrows[i] = 0;
-                        score = score + 1;
-                    end else if (score > 0) score = score - 1;
+                if (BtnL && (LArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && LArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE)) begin
+                    LArrows[i] = 0;
+                    score = score + 1;
                 end
-                if (BtnR) begin
-                    if (RArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && RArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE) begin
-                        RArrows[i] = 0;
-                        score = score + 1;
-                    end else if (score > 0) score = score - 1;
+                if (BtnR && (RArrows[i] >= SCORE_LINE_Y - SCORE_TOLERANCE && RArrows[i] <= SCORE_LINE_Y + SCORE_TOLERANCE)) begin
+                    RArrows[i] = 0;
+                    score = score + 1;
                 end
             end
         end
@@ -182,12 +162,12 @@ module graphic(
                 end
             end
 
-            //score lines
-            if (y >= SCORE_LINE_Y - SCORE_LINE_WIDTH/2 - SCORE_TOLERANCE/2 && y <= SCORE_LINE_Y + SCORE_LINE_WIDTH/2 - SCORE_TOLERANCE/2) begin
+            //score line
+            if (y >= SCORE_LINE_Y - SCORE_LINE_WIDTH/2 && y <= SCORE_LINE_Y + SCORE_LINE_WIDTH/2) begin
+              if(reset)
                 rgb_now <= COLOR_LINE;
-            end
-            if (y >= SCORE_LINE_Y - SCORE_LINE_WIDTH/2 + SCORE_TOLERANCE/2 && y <= SCORE_LINE_Y + SCORE_LINE_WIDTH/2 + SCORE_TOLERANCE/2) begin
-                rgb_now <= COLOR_LINE;
+              else
+                rgb_now <= COLOR_UARROW;
             end
 
         end else begin
